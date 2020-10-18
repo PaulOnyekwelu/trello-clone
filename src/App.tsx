@@ -1,15 +1,22 @@
 import React from 'react';
-import { AppContainer, CardContainer, ColumnContainer, ColumnTitle } from './components/styles';
+import Card from './Card';
+import Column from './Column';
+import { AppContainer } from './styledComponents';
 
 
 function App() {
 
   return (
     <AppContainer className="App">
-      <ColumnContainer>
-        <ColumnTitle>Hello world</ColumnTitle>
-        <CardContainer>this is the card</CardContainer>
-      </ColumnContainer>
+      <Column title="TODOS">
+        <Card text="scaffold application" />
+      </Column>
+      <Column title="IN PROGRESS">
+        <Card text="Learning React-Typescript" />
+      </Column>
+      <Column title="DONE">
+        <Card text="learning React" />
+      </Column>
     </AppContainer>
   );
 }
