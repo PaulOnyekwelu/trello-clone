@@ -1,12 +1,16 @@
 import React from 'react';
+import { AppContainer, CardContainer, ColumnContainer, ColumnTitle } from './components/styles';
 
 
 function App() {
 
   return (
-    <div className="App">
-      hello world
-    </div>
+    <AppContainer className="App">
+      <ColumnContainer>
+        <ColumnTitle>Hello world</ColumnTitle>
+        <CardContainer>this is the card</CardContainer>
+      </ColumnContainer>
+    </AppContainer>
   );
 }
 
