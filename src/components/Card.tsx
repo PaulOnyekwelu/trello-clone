@@ -1,5 +1,5 @@
 import React from "react";
-import { CardContainer } from "./styledComponents";
+import { CardContainer } from "../styledComponents";
 
 interface CardProps {
     text: string

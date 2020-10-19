@@ -1,8 +1,8 @@
 import React from 'react';
 import AddNewItem from './AddNewItem';
-import { useAppContext } from './AppStateContext';
+import { useAppContext } from '../store/AppStateContext';
 import Card from './Card';
-import { ColumnContainer, ColumnTitle } from './styledComponents';
+import { ColumnContainer, ColumnTitle } from '../styledComponents';
 
 interface ColumnProps {
     title: string,

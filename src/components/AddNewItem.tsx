@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormInput from "./FormInput";
-import { AddItemButton } from "./styledComponents";
+import { AddItemButton } from "../styledComponents";
 
 interface AddNewItemProps {
     onAdd(text: string): void,

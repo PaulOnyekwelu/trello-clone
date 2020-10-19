@@ -1,8 +1,7 @@
 import React from "react";
-import AddNewItem from "./AddNewItem";
-import { useAppContext } from "./AppStateContext";
-import Card from "./Card";
-import Column from "./Column";
+import AddNewItem from "./components/AddNewItem";
+import { useAppContext } from "./store/AppStateContext";
+import Column from "./components/Column";
 import { AppContainer } from "./styledComponents";
 
 function App() {

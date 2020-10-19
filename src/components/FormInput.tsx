@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useFocus } from "./libs/useFocus";
-import { NewItemButton, NewItemFormContainer, NewItemInput } from "./styledComponents";
+import React, { useState } from "react";
+import { useFocus } from "../libs/useFocus";
+import { NewItemButton, NewItemFormContainer, NewItemInput } from "../styledComponents";
 
 interface FormInputProps {
     onAdd(text: string):void
