@@ -1,17 +1,23 @@
 import React from 'react';
 import AddNewItem from './AddNewItem';
+import { useAppContext } from './AppStateContext';
+import Card from './Card';
 import { ColumnContainer, ColumnTitle } from './styledComponents';
 
 interface ColumnProps {
-    title: string
+    title: string,
+    index: number
 }
 
 
-const Column = ({ title, children }:React.PropsWithChildren<ColumnProps>) => {
+const Column = ({ title, index }:ColumnProps) => {
+    const { state:{lists} } = useAppContext();
     return(
         <ColumnContainer>
             <ColumnTitle>{title}</ColumnTitle>
-            {children}
+            {
+                lists[index].tasks.map(task => (<Card key={task.id} text={task.text} />))
+            }
             <AddNewItem onAdd={f=> console.log('added...')} dark={true} toggleButtonText="+Add New list" />
         </ColumnContainer>
     )
