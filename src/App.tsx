@@ -1,4 +1,5 @@
 import React from 'react';
+import AddNewItem from './AddNewItem';
 import Card from './Card';
 import Column from './Column';
 import { AppContainer } from './styledComponents';
@@ -17,6 +18,7 @@ function App() {
       <Column title="DONE">
         <Card text="learning React" />
       </Column>
+      <AddNewItem onAdd={f=> console.log('added...')} toggleButtonText="+Add New list" />
     </AppContainer>
   );
 }
