@@ -1,4 +1,5 @@
-import React, {createContext, useContext} from "react";
+import React, {createContext, useContext, useReducer} from "react";
+import {reducer} from "./reducer";
 
 // defining interfaces
 interface Task{
@@ -6,18 +7,19 @@ interface Task{
     text: string
 }
 
-interface List {
+export interface List {
     id: string,
     text: string,
     tasks: Task[]
 }
 
-interface AppState {
+export interface AppState {
     lists: List[]
 }
 
 interface AppStateContextProps {
-	state: AppState
+	state: AppState,
+	dispatch: any
 }
 
 
@@ -46,12 +48,17 @@ export const useAppContext = () => {
 	return useContext(AppStateContext);
 }
 
+
+
 const AppStateProvider = ({children}:React.PropsWithChildren<{}>) => {
+
+	const [state, dispatch] = useReducer(reducer, appData);
 	return (
-		<AppStateContext.Provider value={{state: appData}} >
+		<AppStateContext.Provider value={{state, dispatch}} >
 			{children}
 		</AppStateContext.Provider>
 	)
 }
+
 
 export default AppStateProvider;

@@ -11,14 +11,22 @@ interface ColumnProps {
 
 
 const Column = ({ title, index }:ColumnProps) => {
-    const { state:{lists} } = useAppContext();
+    const { state:{lists}, dispatch } = useAppContext();
+
+    const addTask = (text:string) => {
+        dispatch({
+            type: "ADD_TASK",
+            payload: {index, text}
+        })
+    }
+
     return(
         <ColumnContainer>
             <ColumnTitle>{title}</ColumnTitle>
             {
                 lists[index].tasks.map(task => (<Card key={task.id} text={task.text} />))
             }
-            <AddNewItem onAdd={f=> console.log('added...')} dark={true} toggleButtonText="+Add New list" />
+            <AddNewItem onAdd={addTask} dark={true} toggleButtonText="+Add New list" />
         </ColumnContainer>
     )
 }

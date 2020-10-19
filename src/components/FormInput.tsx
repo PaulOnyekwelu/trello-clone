@@ -14,7 +14,7 @@ const FormInput = ({onAdd}:FormInputProps) => {
     return (
         <NewItemFormContainer>
             <NewItemInput ref={inputRef} type="text" placeholder="" value={text} onChange={e => setText(e.target.value)} />
-            <NewItemButton onClick={() => onAdd(text)}>Create</NewItemButton>
+            <NewItemButton onClick={(e) => onAdd(text)}>Create</NewItemButton>
         </NewItemFormContainer>
     )
 }

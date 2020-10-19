@@ -4,8 +4,16 @@ import { useAppContext } from "./store/AppStateContext";
 import Column from "./components/Column";
 import { AppContainer } from "./styledComponents";
 
+
 function App() {
-	const { state } = useAppContext();
+	const { state, dispatch } = useAppContext();
+	const addList = (text:string) => {
+		dispatch({
+			type: "ADD_LIST",
+			payload: text,
+		})
+		console.log(state)
+	}
 
 	return (
 		<AppContainer className="App">
@@ -14,7 +22,7 @@ function App() {
 					<Column title={list.text} key={list.id} index={i} />
 				))}
 			<AddNewItem
-				onAdd={f => console.log("added...")}
+				onAdd={addList}
 				toggleButtonText="+Add New list"
 			/>
 		</AppContainer>
