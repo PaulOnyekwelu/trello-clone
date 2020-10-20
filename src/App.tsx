@@ -12,7 +12,6 @@ function App() {
 			type: "ADD_LIST",
 			payload: text,
 		})
-		console.log(state)
 	}
 
 	return (
