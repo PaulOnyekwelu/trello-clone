@@ -5,6 +5,7 @@ import Card from './Card';
 import { ColumnContainer, ColumnTitle } from '../styledComponents';
 import { useItemDrag } from '../customHooks/useItemDrag';
 import { useItemDrop } from '../customHooks/useItemDrop';
+import { isHidden } from '../libs/isHidden';
 
 interface ColumnProps {
     title: string,
@@ -14,7 +15,7 @@ interface ColumnProps {
 
 
 const Column = ({ title, index, id }:ColumnProps) => {
-    const { state:{lists}, dispatch } = useAppContext();
+    const { state:{lists, draggedItem}, dispatch } = useAppContext();
     const columnRef = useRef<HTMLDivElement>(null)
     const {drag} = useItemDrag({type: "COLUMN", text: title, id, index})
     const {drop} = useItemDrop(index)
@@ -29,7 +30,7 @@ const Column = ({ title, index, id }:ColumnProps) => {
     drag(drop(columnRef));
 
     return(
-        <ColumnContainer ref={columnRef}>
+        <ColumnContainer ref={columnRef} isHidden={isHidden(draggedItem, "COLUMN", id)} >
             <ColumnTitle>{title}</ColumnTitle>
             {
                 lists[index].tasks.map(task => (<Card key={task.id} text={task.text} />))

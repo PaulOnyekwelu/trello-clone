@@ -12,7 +12,7 @@ type Action =
 
 export const reducer = (
 	state: AppState,
-	{ type, payload }: any
+	{ type, payload }: Action | any
 ): AppState => {
 	switch (type) {
 		case "ADD_LIST": {

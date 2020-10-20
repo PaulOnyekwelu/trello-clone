@@ -5,7 +5,16 @@ interface AddItemButtonProps {
 	dark?: boolean;
 }
 
+interface DragPreviewContainerProps {
+	isHidden? : boolean
+}
+
+
 // styled components
+export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
+	opacity: ${({isHidden}) => (isHidden ? 0.2 : 1)}
+`;
+
 export const AppContainer = styled.section`
 	height: 100%;
 	width: 100%;
@@ -15,7 +24,7 @@ export const AppContainer = styled.section`
 	padding: 2rem;
 `;
 
-export const ColumnContainer = styled.section`
+export const ColumnContainer = styled(DragPreviewContainer)`
 	width: 300px;
 	min-height: 40px;
 	background: #ebecf0;
@@ -43,7 +52,7 @@ export const CardContainer = styled.div`
 export const AddItemButton = styled.button<AddItemButtonProps>`
 	max-width: 300px;
 	background-color: #ffffff3d;
-	color: ${props => (props.dark ? "#000" : "#fff")};
+	color: ${({dark}) => (dark ? "#000" : "#fff")};
 	cursor: pointer;
 	border: none;
 	border-radius: 3px;
