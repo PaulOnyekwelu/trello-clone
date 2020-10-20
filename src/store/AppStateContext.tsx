@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useReducer} from "react";
+import { DragItem } from "../libs/dragItem";
 import {reducer} from "./reducer";
 
 // defining interfaces
@@ -14,7 +15,8 @@ export interface List {
 }
 
 export interface AppState {
-    lists: List[]
+	lists: List[],
+	draggedItem: DragItem | undefined
 }
 
 interface AppStateContextProps {
@@ -41,6 +43,7 @@ export const appData: AppState = {
 			tasks: [{ id: "c3", text: "Begin to use static typing" }],
 		},
 	],
+	draggedItem: undefined
 };
 
 export const AppStateContext = createContext<AppStateContextProps>({} as AppStateContextProps);

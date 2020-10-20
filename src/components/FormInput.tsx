@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useFocus } from "../libs/useFocus";
+import { useFocus } from "../customHooks/useFocus";
 import { NewItemButton, NewItemFormContainer, NewItemInput } from "../styledComponents";
 
 interface FormInputProps {

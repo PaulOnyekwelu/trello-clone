@@ -3,5 +3,4 @@ export const moveItem = <T>(array: T[], from: number, to: number) => {
     const item = array.splice(from, 1)[0];
     array.splice(startIndex, 0, item)
     return array;
-
 }
