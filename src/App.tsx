@@ -18,7 +18,7 @@ function App() {
 		<AppContainer className="App">
 			{state &&
 				state.lists.map((list, i) => (
-					<Column title={list.text} key={list.id} index={i} />
+					<Column title={list.text} id={list.id} key={list.id} index={i} />
 				))}
 			<AddNewItem
 				onAdd={addList}

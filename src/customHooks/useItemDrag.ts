@@ -17,7 +17,7 @@ export const useItemDrag = (item: DragItem) => {
             payload: undefined
         })
     }
-    const [, drag] = useDrag({ item, begin, end});
+    const [, drag] = useDrag({ item, begin, end });
 
     return {drag};
 }
