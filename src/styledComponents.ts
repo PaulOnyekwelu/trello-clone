@@ -15,7 +15,7 @@ export const AppContainer = styled.section`
 	padding: 2rem;
 `;
 
-export const ColumnContainer = styled.div`
+export const ColumnContainer = styled.section`
 	width: 300px;
 	min-height: 40px;
 	background: #ebecf0;
