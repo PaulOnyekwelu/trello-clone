@@ -103,3 +103,13 @@ export const NewItemInput = styled.input`
   padding: 0.5rem 1rem;
   width: 100%;
 `;
+
+export const CustomDragLayerContainer = styled.div`
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100;
+	pointer-event: none;
+	z-index: 100;
+`;

@@ -35,7 +35,7 @@ const Column = ({ title, index, id }:ColumnProps) => {
             {
                 lists[index].tasks.map(task => (<Card key={task.id} text={task.text} />))
             }
-            <AddNewItem onAdd={addTask} dark={true} toggleButtonText="+Add New list" />
+            <AddNewItem onAdd={addTask} toggleButtonText="+Add New list" dark />
         </ColumnContainer>
     )
 }

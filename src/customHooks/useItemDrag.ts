@@ -5,6 +5,7 @@ import { useAppContext } from "../store/AppStateContext";
 
 export const useItemDrag = (item: DragItem) => {
     const { dispatch } = useAppContext();
+
     const begin = () => {
         dispatch({
             type: "SET_DRAGGED_ITEM",
@@ -17,7 +18,7 @@ export const useItemDrag = (item: DragItem) => {
             payload: undefined
         })
     }
-    const [, drag] = useDrag({ item, begin, end });
 
+    const [, drag] = useDrag({ item, begin, end });
     return {drag};
 }

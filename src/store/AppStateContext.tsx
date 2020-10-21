@@ -2,6 +2,7 @@ import React, {createContext, useContext, useReducer} from "react";
 import { DragItem } from "../libs/dragItem";
 import {reducer} from "./reducer";
 
+
 // defining interfaces
 interface Task{
     id: string,
@@ -23,6 +24,7 @@ interface AppStateContextProps {
 	state: AppState,
 	dispatch: any
 }
+
 
 
 export const appData: AppState = {
@@ -52,7 +54,6 @@ export const useAppContext = () => {
 }
 
 
-
 const AppStateProvider = ({children}:React.PropsWithChildren<{}>) => {
 
 	const [state, dispatch] = useReducer(reducer, appData);
@@ -62,6 +63,5 @@ const AppStateProvider = ({children}:React.PropsWithChildren<{}>) => {
 		</AppStateContext.Provider>
 	)
 }
-
 
 export default AppStateProvider;
