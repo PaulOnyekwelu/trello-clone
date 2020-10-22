@@ -3,6 +3,7 @@ import AddNewItem from "./components/AddNewItem";
 import { useAppContext } from "./store/AppStateContext";
 import Column from "./components/Column";
 import { AppContainer } from "./styledComponents";
+import CustomDragLayer from "./components/CustomDragLayer";
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
 	}
 
 	return (
-		<AppContainer className="App">
+		<AppContainer>
+			<CustomDragLayer isPreview={true}/>
 			{state &&
 				state.lists.map((list, i) => (
 					<Column title={list.text} id={list.id} key={list.id} index={i} />

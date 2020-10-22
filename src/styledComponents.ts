@@ -6,13 +6,15 @@ interface AddItemButtonProps {
 }
 
 interface DragPreviewContainerProps {
-	isHidden? : boolean
+	isHidden? : boolean;
+	isPreview?: boolean
 }
 
 
 // styled components
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
-	opacity: ${({isHidden}) => (isHidden ? 0.2 : 1)}
+	transform: ${({isPreview}) => (isPreview ? "rotate(5deg)": undefined)};
+	opacity: ${({isHidden}) => (isHidden ? 0 : 1)};
 `;
 
 export const AppContainer = styled.section`
@@ -29,7 +31,7 @@ export const ColumnContainer = styled(DragPreviewContainer)`
 	min-height: 40px;
 	background: #ebecf0;
 	border-radius: 3px;
-	margin-left: 1rem;
+	margin-right: 1rem;
 	padding: 0.5rem;
 	flex-grow: 0;
 `;
@@ -109,7 +111,8 @@ export const CustomDragLayerContainer = styled.div`
 	left: 0;
 	top: 0;
 	height: 100%;
-	width: 100;
-	pointer-event: none;
+	width: 100%;
+	pointer-events: none;
 	z-index: 100;
 `;
+
